@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Flexbox</title>
+</head>
+<style>
+   /* @media screen and (max-weight:800px; min-width:300px)*/
+
+  * {
+    margin: 2px;
+    padding: 2px;
+    box-sizing: border-box;
+    background-color: #0b0b45;
+    allign-items: center;
+  }
+
+  body {
+    font-family: sans-serif;
+    font-size: 2rem;
+  }
+
+  .container {
+    display: grid;
+    height: 100vh;
+    grid-gap: 0.5rem;
+    grid-template-areas:
+      "a a a a   a a a a   b b b b"
+      "c c c c   c c d d   d d d d"
+      "c c c c   c c e e   e e e e";
+  }
+
+  .boxes {
+    display: grid;
+    place-items: center;
+    border: 1px black;
+    padding: 2px;
+  }
+
+  .box-1 {
+    grid-area: a;
+    background-color: orange;
+  }
+
+  .box-2 {
+    grid-area: b;
+    background-color: maroon;
+  }
+
+  .box-3 {
+    grid-area: c;
+    background-color: green;
+  }
+
+  .box-4 {
+    grid-area: d;
+    background-color: crimson;
+  }
+
+  .box-5 {
+    grid-area: e;
+    background-color: teal;
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      grid-template-areas:
+        "a a a a   a a a a   a a a a"
+        "b b b b   b b b b   b b b b"
+        "c c c c   c c d d   d d d d"
+        "e e e e   e e e e   e e e e ";
+      grid-template-rows: 1fr 2fr 1fr auto;
+    }
+  }
+</style>
+
+<body>
+  <section class='container'>
+    <div class='box-1 boxes'></div>
+    <div class='box-2 boxes'></div>
+    <div class='box-3 boxes'></div>
+    <div class='box-4 boxes'></div>
+    <div class='box-5 boxes'></div>
+  </section>
+
+</html>
+</body>
+
+</html>
